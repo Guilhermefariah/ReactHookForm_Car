@@ -21,7 +21,7 @@ function App() {
               height="24"
               className="d-inline-block align-text-top"
             />
-            Seguradora de Veículos de Luxo
+            Seguradora de Veículos
           </a>
         </div>
       </nav>
@@ -30,10 +30,10 @@ function App() {
         <div className="card-header p-4">
           <img
             src="logo.png"
-            alt="Seguradora de Veículos de Luxo"
+            alt="Seguradora de Veículos"
             className="logo"
           />
-          <h1 className="h2 my-5">Seguradora de Veículos de Luxo</h1>
+          <h1 className="h2 my-5">Seguradora de Veículos</h1>
         </div>
 
         <div className="card-body">
@@ -45,7 +45,7 @@ function App() {
                   className="form-control"
                   placeholder="Modelo de veículo"
                   maxLength="50"
-                  {...register("vehicleModel")}
+                  {...register("vehicleModel", { required: true })}
                 />
               </div>
 
@@ -54,7 +54,7 @@ function App() {
                   type="number"
                   placeholder="R$ Avaliação (FIPE)"
                   className="form-control"
-                  {...register("vehiclePrice")}
+                  {...register("vehiclePrice", { required: true })}
                 />
               </div>
             </div>
@@ -65,7 +65,7 @@ function App() {
                   type="number"
                   placeholder="Ano de fabricação"
                   className="form-control"
-                  {...register("vehicleYear")}
+                  {...register("vehicleYear", { required: true })}
                 />
               </div>
 

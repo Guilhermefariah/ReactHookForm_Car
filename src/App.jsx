@@ -1,6 +1,14 @@
+import { useForm } from "react-hook-form";
+
 import "./App.css";
 
 function App() {
+  const { handleSubmit, register } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <>
       <nav className="navbar bg-body-tertiary">
@@ -29,7 +37,7 @@ function App() {
         </div>
 
         <div className="card-body">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
               <div className="mb-3 col">
                 <input
@@ -37,6 +45,7 @@ function App() {
                   className="form-control"
                   placeholder="Modelo de veículo"
                   maxLength="50"
+                  {...register("vehicleModel")}
                 />
               </div>
 
@@ -45,6 +54,7 @@ function App() {
                   type="number"
                   placeholder="R$ Avaliação (FIPE)"
                   className="form-control"
+                  {...register("vehiclePrice")}
                 />
               </div>
             </div>
@@ -55,6 +65,7 @@ function App() {
                   type="number"
                   placeholder="Ano de fabricação"
                   className="form-control"
+                  {...register("vehicleYear")}
                 />
               </div>
 
@@ -63,6 +74,7 @@ function App() {
                   type="checkbox"
                   className="form-check-input"
                   id="renovation-checkbox"
+                  {...register('isSecurityRenovation')}
                 />
                 <label
                   className="form-check-label"
@@ -80,8 +92,9 @@ function App() {
 
               <button
                 type="button"
-                className="btn btn-danger col ms-3"
-              ></button>
+                className="btn btn-danger col ms-3">
+                  Limpar
+                </button>
             </div>
           </form>
         </div>

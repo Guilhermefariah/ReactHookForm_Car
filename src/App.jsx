@@ -1,35 +1,93 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <nav className="navbar bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            <img
+              src="logo.png"
+              alt="logo"
+              width="30"
+              height="24"
+              className="d-inline-block align-text-top"
+            />
+            Seguradora de Veículos de Luxo
+          </a>
+        </div>
+      </nav>
+
+      <div className="card text-center container my-auto p-0">
+        <div className="card-header p-4">
+          <img
+            src="logo.png"
+            alt="Seguradora de Veículos de Luxo"
+            className="logo"
+          />
+          <h1 className="h2 my-5">Seguradora de Veículos de Luxo</h1>
+        </div>
+
+        <div className="card-body">
+          <form>
+            <div className="row">
+              <div className="mb-3 col">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Modelo de veículo"
+                  maxLength="50"
+                />
+              </div>
+
+              <div className="col mb-3">
+                <input
+                  type="number"
+                  placeholder="R$ Avaliação (FIPE)"
+                  className="form-control"
+                />
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col">
+                <input
+                  type="number"
+                  placeholder="Ano de fabricação"
+                  className="form-control"
+                />
+              </div>
+
+              <div className="col form-check justify-content-center d-flex gap-3">
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id="renovation-checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="renovation-checkbox"
+                >
+                  Renovação
+                </label>
+              </div>
+            </div>
+
+            <div className="mt-3">
+              <button type="submit" className="btn btn-primary col">
+                Calcular
+              </button>
+
+              <button
+                type="button"
+                className="btn btn-danger col ms-3"
+              ></button>
+            </div>
+          </form>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
